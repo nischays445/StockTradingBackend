@@ -5,7 +5,7 @@ import certifi
 
 class Database:
     def __init__(self, db_name='investment_manager'):
-        self.client = MongoClient('mongodb+srv://user:password@cluster0.hl9ha.mongodb.net', tlsCAFile=certifi.where())
+        self.client = MongoClient('mongocreds', tlsCAFile=certifi.where())
 
         self.db = self.client[db_name]
         self.portfolios = self.db.portfolios
